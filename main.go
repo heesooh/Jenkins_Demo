@@ -5,5 +5,8 @@ import (
 )
 
 func main() {
-    fmt.Println("Hello World!")
+	greetEmpty := greet("")
+	fmt.Println(greetEmpty)
+	greetNotEmpty := greet("World")
+	fmt.Println(greetNotEmpty)
 }
