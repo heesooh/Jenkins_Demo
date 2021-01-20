@@ -24,7 +24,7 @@ func TestGreet(t *testing.T) {
 		log.Printf("func greet() passes when input is empty")
 	}
 
-	result := greet("World")
+	result := greet("World!")
 	if (result != "Hello World!") {
 		t.Errorf("func greet() failed: Expected %v got %v", "Hello World!", result)
 		log.Printf("func greet() failed: Expected %v got %v", "Hello World!", result)
