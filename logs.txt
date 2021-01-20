@@ -1,0 +1,6 @@
+2021/01/19 16:25:14 func greet() passes when input is empty
+2021/01/19 16:25:14 func greet() passes when input is not empty
+2021/01/19 16:25:14 -----------------------------------------------------------
+2021/01/19 16:25:33 func greet() passes when input is empty
+2021/01/19 16:25:33 func greet() failed: Expected Hello World! got Hello World!
+2021/01/19 16:25:33 -----------------------------------------------------------
