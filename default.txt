@@ -1,0 +1,2 @@
+This is the deafult txt.
+To send your own test log.txt, follow the instruction on the README.md file
