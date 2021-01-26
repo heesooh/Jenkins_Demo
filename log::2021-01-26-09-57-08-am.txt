@@ -1,6 +1,0 @@
---- FAIL: TestGreet (0.00s)
-    greet_test.go:10: func greet() failed: Expected Hello Jenkins got Hello Jenkins
-    greet_test.go:15: func greet() failed: Expected Hello World! got Hello Worlds!
-FAIL
-exit status 1
-FAIL	github.com/heesooh/jenkins_demo	0.143s
