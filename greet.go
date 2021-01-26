@@ -6,7 +6,7 @@ import (
 
 func greet(user string) string {
     if (len(user) == 0) {
-        return "Hello Stranger"
+        return "Hello Jenkins"
     } else {
         return fmt.Sprintf("Hello %v!", user)
     }
