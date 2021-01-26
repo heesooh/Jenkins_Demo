@@ -1,7 +1,8 @@
 package main
 
 import (
-	"gopkg.in/gomail.v2"
+	//"gopkg.in/gomail.v2"
+	"var/lib/jenkins/go/src/gopkg.in/gomail.v2"
 )
 
 func sendEmail(filename string, errorMessage string) {
