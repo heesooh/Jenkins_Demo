@@ -6,14 +6,14 @@ import (
 
 func sendEmail(filename string) {
 	m := gomail.NewMessage()
-	m.SetHeader("From", "example@example.com")
-	m.SetHeader("To", "example@example.com", "example@example.com")
+	m.SetHeader("From", "example@gmail.com")
+	m.SetHeader("To", "example@gmail.com", "example@gmail.com")
 	//m.SetAddressHeader("Cc", "dan@example.com", "Dan")
 	m.SetHeader("Subject", "Jenkins_Demo:")
-	m.SetBody("text/html", "This is a message for Jenkins Demo written in html format.")
+	m.SetBody("text/html", "<p> This is a message for Jenkins Demo written in html format. </p>")
 	m.Attach(filename)
 
-	d := gomail.NewDialer("smtp.example.com", 587, "example@example.com", "example")
+	d := gomail.NewDialer("smtp.gmail.com", 587, "example@gmail.com", "password")
 
 	if err := d.DialAndSend(m); err != nil {
 		panic(err)
