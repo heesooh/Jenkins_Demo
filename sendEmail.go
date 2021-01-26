@@ -6,15 +6,14 @@ import (
 
 func sendEmail(filename string, errorMessage string) {
 	m := gomail.NewMessage()
-	m.SetHeader("From", "example@gmail.com")
-	m.SetHeader("To", "example@gmail.com", "example@gmail.com")
+	m.SetHeader("From", "blockchainwarning@omnisolu.com")
+	m.SetHeader("To", "folowal757@loopsnow.com", "example@gmail.com")
 	//m.SetAddressHeader("Cc", "dan@example.com", "Dan")
 	m.SetHeader("Subject", "Jenkins_Demo:")
-	//message body need to contain failed messages
 	m.SetBody("text/html", "<p>" + errorMessage + "</p>")
 	m.Attach(filename)
 
-	d := gomail.NewDialer("smtp.gmail.com", 587, "example@gmail.com", "password")
+	d := gomail.NewDialer("smtp.gmail.com", 587, "blockchainwarning@omnisolu.com", "01353751")
 
 	if err := d.DialAndSend(m); err != nil {
 		panic(err)
