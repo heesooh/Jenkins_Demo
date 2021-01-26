@@ -7,4 +7,5 @@ Use the following command in Jenkins build shell command to create and send log 
 1. go build
 2. filename=log::"`date +"%Y-%m-%d-%I-%M-%S-%p"`".txt
 3. go test >> $filename
-4. ./Jenkins_Demo -filename $filename
+4. errorMessage=$(go test)
+4. ./Jenkins_Demo -filename $filename -error $errorMessage
