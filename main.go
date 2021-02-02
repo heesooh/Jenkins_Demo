@@ -20,5 +20,6 @@ func main() {
 	fmt.Println(greetNotEmpty)
 	if (strings.Contains(errorMessage, "FAIL")) {
 		sendEmail(filename, errorMessage)
+		fmt.Println("HERE")
 	}
 }
