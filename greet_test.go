@@ -6,7 +6,7 @@ import (
 
 func TestGreet(t *testing.T) {
 	emptyResult := greet("")
-	if (emptyResult != "Hello Jenkins") {
+	if (emptyResult != "Hello Jenkinss") {
 		t.Errorf("func greet() failed: Expected %v got %v", "Hello Jenkins", emptyResult)
 	}
 
