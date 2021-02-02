@@ -12,7 +12,7 @@ func main() {
 	flag.StringVar(&filename, "filename", "default.txt", "default txt file")
 	flag.StringVar(&errorMessage, "error", "FAIL", "default error message")
 	flag.Parse()
-	fmt.Printf("filename is: %v", filename)
+	fmt.Printf("filename is: %v\n", filename)
 	fmt.Println("This is a Jenkins Demo")
 	greetEmpty := greet("")
 	fmt.Println(greetEmpty)
