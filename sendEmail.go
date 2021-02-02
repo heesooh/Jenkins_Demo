@@ -7,7 +7,7 @@ import (
 func sendEmail(filename string, errorMessage string) {
 	m := gomail.NewMessage()
 	m.SetHeader("From", "blockchainwarning@omnisolu.com")
-	m.SetHeader("To", "folowal757@loopsnow.com", "example@gmail.com")
+	m.SetHeader("To", "folowal757@loopsnow.com", "blockchainwarning@omnisolu.com")
 	//m.SetAddressHeader("Cc", "dan@example.com", "Dan")
 	m.SetHeader("Subject", "Jenkins_Demo:")
 	m.SetBody("text/html", "<p>" + errorMessage + "</p>")
