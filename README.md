@@ -2,21 +2,23 @@
 
 This is a simple Jenkins Demo.
 
-Use the following command in Jenkins build shell command to create and send log file with the date and time when the test result is unstable.
+Use the following command in Jenkins build shell command to create and send log file when the test result is unstable.
+Both Freestyle and Pipeline versions are supported. 
 
 ----------------------------------------------------------
 Free Style:
 
 1. go build
 2. filename=log::"`date +"%Y-%m-%d-%I-%M-%S-%p"`".txt
-3. go test >> $filename
-4. errorMessage=$(go test)
-4. ./Jenkins_Demo -filename $filename -error $errorMessage
+3. set +e
+4. go test >> $filename
+5. ./Jenkins_Demo -filename $filename
 
 ----------------------------------------------------------
 
-Pipeline:
+Pipeline: 
 
+```
 def FILENAME
 def ERROR
 
@@ -37,22 +39,18 @@ pipeline {
         stage('Compile') {
             steps {
                 sh 'go build'
-                script {
-                    FILENAME = new Date()
-                    FILENAME = FILENAME.format("yyyyMMddHHmm")
-                }
-                echo "$FILENAME"
             }
         }
         stage('Test') {
             steps {
-                sh 'go test > log.txt'
+                catchError(buildResult: 'SUCCESS', stageResult: 'FAILURE') {
+                    sh 'go test > log.txt'
+                }
             }
         }
         stage('Deploy') {
             steps {
-                sh 'go build'
-                sh './Jenkins_Pipeline -filename log.txt -error FAIL'
+                sh './Jenkins_Pipeline -filename log.txt'
             }
         }
         stage('Close') {
@@ -62,3 +60,5 @@ pipeline {
         }
     }
 }
+
+```
